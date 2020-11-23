@@ -2,6 +2,7 @@ div#saitama-main {
     position: relative;
     height: 360px;
     width: 640px;
+    margin: 5px;
     border: 1px solid black;
     overflow: hidden;
     user-select: none;
