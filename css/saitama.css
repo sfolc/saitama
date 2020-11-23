@@ -15,7 +15,8 @@ div#saitama-main {
 }
 
 div#saitama-main img {
-    -webkit-user-drag:none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
 }
 
 #saitama-title-title {
