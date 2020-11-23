@@ -1,17 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 div#saitama-main {
     position: relative;
     height: 360px;
     width: 640px;
-    margin: 5px;
+    margin: 4px;
     border: 1px solid black;
     overflow: hidden;
     user-select: none;
     font-size: 16px;
-}
-
-div#saitama-main * {
-    margin: 0;
-    padding: 0;
 }
 
 div#saitama-main img {
