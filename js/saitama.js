@@ -17,9 +17,10 @@ $(function(){
        $(this).removeClass('hover');
   });
 
+  //フルスクリーン
   $("#fullscreen").on("click",
-  function(event) {
-    $("#saitama-main")[0].requestFullscreen();
-  }
-);
+    function(event) {
+      $("body")[0].requestFullscreen();
+    }
+  );
 });
