@@ -49,6 +49,8 @@ $(function(){
     }
   );
 
+  $('img').on('dragstart', function(event) { event.preventDefault(); });
+
   //ホバーエミュレート
   $("._hover")
     .on('touchstart', function(){
@@ -57,4 +59,9 @@ $(function(){
        $(this).removeClass('hover');
   });
 
+});
+
+$(window).on("load", function(){
+
+  $('#saitama-title-saitama-gogogo').contents().find("path").on('click', function(event) { alert(event.target.src) });
 });
