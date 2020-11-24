@@ -21,8 +21,8 @@ $(function(){
   $("#fullscreen").on("click",
     function(event) {
       $("body")[0].requestFullscreen();
-      lockOrientation = screen.orientation.lock || screen.mozLockOrientation || screen.msLockOrientation || screen.lockOrientation;
-      lockOrientation('landscape');
+      locker = screen.orientation.lock || screen.mozLockOrientation || screen.msLockOrientation || screen.lockOrientation;
+      locker("landscape");
     }
   );
 });
