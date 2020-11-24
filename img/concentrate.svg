@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" preserveAspectRatio="none">
+<svg xmlns="http://www.w3.org/2000/svg">
+<symbol id="concentrate" viewBox="0 0 600 450" preserveAspectRatio="none">
   <polygon points="599.891,214.574 599.891,213.89 507.869,217.535"/>
   <polygon points="599.891,193.653 599.891,192.943 506.071,203.214"/>
   <polygon points="599.891,185.685 599.891,182.034 498.813,197.728"/>
@@ -104,4 +105,5 @@
   <polygon points="599.891,247.303 599.891,245.395 501.205,239.324"/>
   <polygon points="599.891,236.475 599.891,233.019 507.913,231.757"/>
   <polygon points="599.891,225.132 599.891,222.04 514.102,223.99"/>
+  </symbol>
 </svg>

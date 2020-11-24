@@ -19,7 +19,7 @@ body {
     touch-action: manipulation;
 }
 
-#saitama-main object {
+#saitama-main svg {
     pointer-events: visiblePainted;
 }
 
