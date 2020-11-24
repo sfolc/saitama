@@ -22,7 +22,7 @@ $(function(){
     function(event) {
       $("body")[0].requestFullscreen();
       locker = screen.orientation.lock || screen.mozLockOrientation || screen.msLockOrientation || screen.lockOrientation;
-      locker("landscape");
+      locker.call("landscape");
     }
   );
 });
