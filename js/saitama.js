@@ -1,6 +1,6 @@
 $(function(){
 
-  //右クリック（ロングタップ）抑制
+  //右クリック（ロングタップ）メニュー抑制
   $("#saitama-main").on("contextmenu",
     function(event) {
       event.preventDefault();
@@ -14,6 +14,7 @@ $(function(){
     .on('mouseenter touchstart', function(){
        $(this).addClass('hover');
     }).on('mouseleave touchend', function(){
+       alert("x");
        $(this).removeClass('hover');
   });
 });
