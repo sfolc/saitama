@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 
   $("#saitama-main").on("contextmenu",
     function(event) {
