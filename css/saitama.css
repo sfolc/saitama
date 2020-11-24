@@ -87,13 +87,3 @@ body {
     background-color: lawngreen;
 }
 
-#fullscreen {
-    width: 48px;
-    height: 48px;
-}
-
-@media (pointer: fine) {
-    #fullscreen {
-        display: none;
-    }
-}

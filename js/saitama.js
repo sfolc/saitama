@@ -57,12 +57,4 @@ $(function(){
        $(this).removeClass('hover');
   });
 
-  //フルスクリーン
-  $("#fullscreen").on("click",
-    function(event) {
-      $("body")[0].requestFullscreen();
-      locker = screen.orientation.lock || screen.mozLockOrientation || screen.msLockOrientation || screen.lockOrientation;
-      locker.call(screen.orientation.lock ? screen.orientation : screen, "landscape");
-    }
-  );
 });
