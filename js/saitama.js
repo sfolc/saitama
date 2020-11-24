@@ -21,7 +21,7 @@ $(function(){
   $("#fullscreen").on("click",
     function(event) {
       $("body")[0].requestFullscreen();
-      screen.orientation.lock('landscape');
+      ScreenOrientation.lock('landscape');
     }
   );
 });
