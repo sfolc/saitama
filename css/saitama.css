@@ -13,18 +13,14 @@ body {
     background-color: white;
     overflow: hidden;
     user-select: none;
-    -moz-user-select: none;
     font-size: 16px;
     font-family: "M PLUS Rounded 1c";
     font-weight: 900;
     touch-action: manipulation;
 }
 
-#saitama-main img {
-    -webkit-user-drag: none;
-    -moz-user-drag: none;
-    -webkit-touch-callout: none;
-    -moz-touch-callout: none;
+#saitama-main object {
+    pointer-events: visiblePainted;
 }
 
 #saitama-title > * {
