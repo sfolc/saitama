@@ -11,9 +11,9 @@ $(function(){
 
   //ホバーエミュレート
   $("._hover")
-    .on('mouseenter', function(ev){
-       alert($("html").css("cursor"));
-    }).on('mouseleave', function(){
-      alert("leave");
+    .on('touchstart', function(){
+       $(this).addClass('hover');
+    }).on('touchend', function(){
+       $(this).removeClass('hover');
   });
 });

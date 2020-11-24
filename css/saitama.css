@@ -75,6 +75,8 @@
     text-align: center;
 }
 
-#saitama-title-menu li.hover,li:active {
-    background-color: lawngreen;
+@media (pointer: fine) {
+    #saitama-title-menu li:hover {
+        background-color: lawngreen;
+    }
 }
