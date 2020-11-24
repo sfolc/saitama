@@ -81,8 +81,6 @@
     }
 }
 
-@media (pointer: none), (pointer: coarse)  {
-    #saitama-title-menu li:active {
-        background-color: lawngreen;
-    }
+#saitama-title-menu li.hover {
+    background-color: lawngreen;
 }
