@@ -16,4 +16,10 @@ $(function(){
     }).on('touchend', function(){
        $(this).removeClass('hover');
   });
+
+  $("#fullscreen").on("click",
+  function(event) {
+    $("#saitama-main")[0].requestFullscreen();
+  }
+);
 });
