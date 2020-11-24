@@ -12,9 +12,10 @@ $(function(){
   //ホバーエミュレート
   $("._hover")
     .on('mouseenter touchstart', function(){
+      alert("on");
        $(this).addClass('hover');
     }).on('mouseleave touchend', function(){
-       alert("x");
+      alert("off");
        $(this).removeClass('hover');
   });
 });
