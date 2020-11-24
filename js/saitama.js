@@ -12,7 +12,7 @@ $(function(){
   //ホバーエミュレート
   $("._hover")
     .on('mouseenter', function(ev){
-       alert("enter");
+       alert($("html").css("cursor"));
     }).on('mouseleave', function(){
       alert("leave");
   });
