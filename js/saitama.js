@@ -21,7 +21,7 @@ $(function(){
   $("#fullscreen").on("click",
     function(event) {
       $("body")[0].requestFullscreen();
-      lockOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
+      lockOrientation = screen.orientation.lock || screen.mozLockOrientation || screen.msLockOrientation || screen.lockOrientation;
       lockOrientation('landscape');
     }
   );
