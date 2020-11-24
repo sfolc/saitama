@@ -80,3 +80,9 @@
         background-color: lawngreen;
     }
 }
+
+@media (pointer: none) {
+    #saitama-title-menu li:active {
+        background-color: lawngreen;
+    }
+}
