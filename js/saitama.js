@@ -11,11 +11,9 @@ $(function(){
 
   //ホバーエミュレート
   $("._hover")
-    .on('mouseenter touchstart', function(ev){
-      alert(ev.target.tagName);
+    .on('mouseenter', function(ev){
        $(this).addClass('hover');
-    }).on('mouseleave touchend', function(){
-      alert("off");
+    }).on('mouseleave', function(){
        $(this).removeClass('hover');
   });
 });
