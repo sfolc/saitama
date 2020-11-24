@@ -1,0 +1,10 @@
+@keyframes shake {
+    50% {
+      transform: translate(5px, 5px);
+    }
+  }
+  
+  .animation-shake {
+    animation: shake 0.15s linear infinite;
+  }
+  

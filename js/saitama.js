@@ -63,6 +63,4 @@ $(function(){
 
 $(window).on("load", function(){
 
-  $('#saitama-title-saitama-gogogo').contents().find("path").on('click', function(event) { alert("gogogo") });
-  $('object').contents().find("polygon").on('click', function(event) { alert("ppp") });
 });
