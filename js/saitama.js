@@ -59,7 +59,7 @@ $(function(){
   $(".hover")
     .on("touchstart", function(){
        $(this).addClass('_hover');
-    }).on("touchend", function(){
+    }).on("touchend", function(event){
       for (i=0; i<event.touches.length; i++) {
         if (document.elementFromPoint(event.touches[i].pageX, event.touches[i].pageY) === this) {
           return;
