@@ -52,11 +52,11 @@ $(function(){
   $('img').on('dragstart', function(event) { event.preventDefault(); });
 
   //ホバーエミュレート
-  $("._hover")
+  $(".hover")
     .on('touchstart', function(){
-       $(this).addClass('hover');
+       $(this).addClass('_hover');
     }).on('touchend', function(){
-       $(this).removeClass('hover');
+       $(this).removeClass('_hover');
   });
 
 });
