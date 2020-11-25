@@ -56,6 +56,8 @@ $(function(){
   );
 
   //ホバーエミュレート
+  $("html").on("touchstart", function(event){});
+
   $(".hover")
     .on("touchstart", function(event){
       for (i=0; i<event.touches.length; i++) {
