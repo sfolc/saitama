@@ -1,4 +1,6 @@
 //リサイズ
+var leaves = {};
+
 function fillDiv(div, proportional) {
   var currentWidth = div.outerWidth();
   var currentHeight = div.outerHeight();
@@ -57,7 +59,7 @@ $(function(){
 
   //ホバーエミュレート
   $("html").on("touchstart", function(event){return false});
-  var leaves = {};
+
   $(".hover")
     .on("touchstart", function(event){
       for (i=0; i<event.changedTouches.length; i++) {
