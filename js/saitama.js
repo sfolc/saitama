@@ -1,3 +1,4 @@
+//リサイズ
 function fillDiv(div, proportional) {
   var currentWidth = div.outerWidth();
   var currentHeight = div.outerHeight();
@@ -20,13 +21,14 @@ function fillDiv(div, proportional) {
     "position": "fixed",
     "left": "0px",
     "top": "0px",
-    "-webkit-transform": "translate(" + translationX + "px, "
+    "transform": "translate(" + translationX + "px, "
                                       + translationY + "px) scale3d("
                                       + scaleX + ", " + scaleY + ", 1)",
-    "-webkit-transform-origin": "0 0"
+    "transform-origin": "0 0"
   });
 }
 
+//初期化
 $(function(){
 
   var saitama_main = $("#saitama-main");
@@ -48,8 +50,6 @@ $(function(){
       return false;
     }
   );
-
-  $('img').on('dragstart', function(event) { event.preventDefault(); });
 
   //ホバーエミュレート
   $(".hover")
