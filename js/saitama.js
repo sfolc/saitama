@@ -57,8 +57,14 @@ $(function(){
 
   //ホバーエミュレート
   $(".hover")
-    .on("touchstart", function(){
-      $(this).addClass('_hover');
+    .on("touchstart", function(event){
+      for (i=0; i<event.touches.length; i++) {
+        touch = event.touches[i];
+        if (touch.target === this && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
+          $(this).addClass('_hover');
+          return;
+        }
+      }
     })
     .on("touchend", function(event){
       for (i=0; i<event.touches.length; i++) {
