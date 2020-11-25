@@ -57,18 +57,15 @@ $(function(){
   var leaves = {};
   $(".hover")
     .on("touchstart", function(event){
-      event.stopPropagation();
       for (i=0; i<event.changedTouches.length; i++) {
-        touch = event.changedTouches[i];
-        leaves[touch.identifier] = false;
+        leaves[event.changedTouches[i].identifier] = false;
       }
       $(this).addClass('_hover');
     })
     .on("touchend touchcancel touchmove", function(event){
-      event.stopPropagation();
-      leaveall = true;
+      var leaveall = true;
       for (i=0; i<event.targetTouches.length; i++) {
-        touch = event.targetTouches[i];
+        let touch = event.targetTouches[i];
         if (!leaves[touch.identifier] && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
           leaveall = false;
         } else {
@@ -77,11 +74,11 @@ $(function(){
       }
       if (leaveall)
         $(this).removeClass("_hover");
-      return false;
     });
 
 });
 
+//リソースロード終了
 $(window).on("load", function(){
 
 });
