@@ -60,13 +60,11 @@ $(function(){
     .on("touchstart", function(){
        $(this).addClass('_hover');
     }).on("touchend", function(){
-      alert("leave");
        $(this).removeClass("_hover");
-    }).on("mouseleave", function(){
-      alert("leave");
-      $(this).removeClass("_hover");
-    }).on("mouseenter", function(){
-      alert("enter");
+    }).on("touchmove", function(event){
+      if (event.touches.every(touch => { document.elementFromPoint(touch.pageX, touch.pageY) != this })) {
+        $(this).removeClass("_hover");
+      };
   });
 
 });
