@@ -60,6 +60,7 @@ $(function(){
     .on("touchstart", function(){
        $(this).addClass('_hover');
     }).on("touchend mouseleave", function(){
+      alert("leave");
        $(this).removeClass("_hover");
   });
 
