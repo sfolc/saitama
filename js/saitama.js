@@ -38,7 +38,7 @@ $(function(){
   var saitama_main = $("#saitama-main");
 
   //自動リサイズ
-  /*
+  
   fillDiv(saitama_main, true);
   if ("onorientationchange" in window) {
     $(window).on("orientationchange", function() { setTimeout(function() { fillDiv(saitama_main, true); }, 500) });
@@ -46,19 +46,13 @@ $(function(){
     $(window).on("deviceorientation", function() { setTimeout(function() { fillDiv(saitama_main, true); }, 500) });
   }
   $(window).on("resize", function() { fillDiv(saitama_main, true); });;
-  */
- 
+  
+  $(document).on("touchstart touchend", function() {return false;});
   //右クリック（ロングタップ）メニュー抑制
-  saitama_main.on("contextmenu", function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-  });
+  saitama_main.on("contextmenu", function() {return false;});
 
   //ホバーエミュレート
-  $("html").on("touchstart", function(event) {
-    event.preventDefault();
-    event.stopPropagation();
-  });
+  $("html").on("touchstart", function() {return false;});
 
   var leaves = {};
   $(".hover")
