@@ -3,6 +3,16 @@
     padding: 0;
 }
 
+html {
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+    font-size: 16px;
+    font-family: "M PLUS Rounded 1c";
+    font-weight: 900;
+}
+
 body {
     background-color: gray;
 }
@@ -13,12 +23,6 @@ body {
     width: 640px;
     background-color: white;
     overflow: hidden;
-    user-select: none;
-    -webkit-user-select: none;
-    font-size: 16px;
-    font-family: "M PLUS Rounded 1c";
-    font-weight: 900;
-    touch-action: manipulation;
 }
 
 #saitama-main svg {
