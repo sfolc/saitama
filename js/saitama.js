@@ -62,14 +62,15 @@ $(function(){
   var leaves = {};
   $(".hover")
     .on("touchstart", function(event){
+      event.stopPropagation();
       for (i=0; i<event.changedTouches.length; i++) {
         touch = event.changedTouches[i];
         leaves[touch.identifier] = false;
       }
       $(this).addClass('_hover');
-      return false;
     })
     .on("touchend touchcancel touchmove", function(event){
+      event.stopPropagation();
       leaveall = true;
       for (i=0; i<event.targetTouches.length; i++) {
         touch = event.targetTouches[i];
@@ -81,7 +82,6 @@ $(function(){
       }
       if (leaveall)
         $(this).removeClass("_hover");
-      return false;
     });
 
 });
