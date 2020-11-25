@@ -56,9 +56,8 @@ $(function(){
   );
 
   //ホバーエミュレート
-  $(".hover")
+  $("*")
     .on("touchstart", function(event){
-      alert("touch");
       for (i=0; i<event.touches.length; i++) {
         touch = event.touches[i];
         if (touch.target === this && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
