@@ -56,13 +56,17 @@ $(function(){
   );
 
   //ホバーエミュレート
+  var touches = Array();
   $(".hover")
     .on("touchstart", function(){
-       $(this).addClass('_hover');
+      touches.push(this);
+      $(this).addClass('_hover');
     })
     .on("touchend", function(event){
+      touche
       for (i=0; i<event.touches.length; i++) {
-        if (document.elementFromPoint(event.touches[i].pageX, event.touches[i].pageY) === this) {
+        touch = event.touches[i];
+        if (touch.target === this && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
           return;
         }
       }
@@ -70,7 +74,8 @@ $(function(){
     })
     .on("touchmove", function(event){
       for (i=0; i<event.touches.length; i++) {
-        if (document.elementFromPoint(event.touches[i].pageX, event.touches[i].pageY) === this) {
+        touch = event.touches[i];
+        if (touch.target === this && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
           return;
         }
       }
