@@ -1,6 +1,4 @@
 //リサイズ
-var leaves = {};
-
 function fillDiv(div, proportional) {
   var currentWidth = div.outerWidth();
   var currentHeight = div.outerHeight();
@@ -59,7 +57,7 @@ $(function(){
 
   //ホバーエミュレート
   $("html").on("touchstart", function(event){return false});
-
+  var leaves = {};
   $(".hover")
     .on("touchstart", function(event){
       for (i=0; i<event.changedTouches.length; i++) {
@@ -73,7 +71,7 @@ $(function(){
       leaveall = true;
       for (i=0; i<event.targetTouches.length; i++) {
         touch = event.targetTouches[i];
-        if (document.elementFromPoint(touch.pageX, touch.pageY) === this) {
+        if (!leaves[touch.identifier] && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
           leaveall = false;
         } else {
           leaves[touch.identifier] = true;
