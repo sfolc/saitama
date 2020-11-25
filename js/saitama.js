@@ -38,6 +38,7 @@ $(function(){
   var saitama_main = $("#saitama-main");
 
   //自動リサイズ
+  /*
   fillDiv(saitama_main, true);
   if ("onorientationchange" in window) {
     $(window).on("orientationchange", function() { setTimeout(function() { fillDiv(saitama_main, true); }, 500) });
@@ -45,7 +46,8 @@ $(function(){
     $(window).on("deviceorientation", function() { setTimeout(function() { fillDiv(saitama_main, true); }, 500) });
   }
   $(window).on("resize", function() { fillDiv(saitama_main, true); });;
-
+  */
+ 
   //右クリック（ロングタップ）メニュー抑制
   saitama_main.on("contextmenu",
     function(event) {
