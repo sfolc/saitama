@@ -21,6 +21,10 @@ function fillDiv(div, proportional) {
     "position": "fixed",
     "left": "0px",
     "top": "0px",
+    "-webkit-transform": "translate(" + translationX + "px, "
+                                      + translationY + "px) scale3d("
+                                      + scaleX + ", " + scaleY + ", 1)",
+    "-webkit-transform-origin": "0 0",
     "transform": "translate(" + translationX + "px, "
                                       + translationY + "px) scale3d("
                                       + scaleX + ", " + scaleY + ", 1)",
