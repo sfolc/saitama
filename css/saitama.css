@@ -1,36 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-}
-
-html {
-    font-size: 16px;
-    font-family: "M PLUS Rounded 1c";
-    font-weight: 900;
-    height: 100%;
-}
-
-body {
-    height: 100%;
-}
-
-#whole-wrapper {
-    background-color: gray;
-    width: 100%;
-    height: 100%;
-}
-
-#saitama-main {
-    position: relative;
-    height: 360px;
-    width: 640px;
-    background-color: white;
-    overflow: hidden;
-}
-
-#saitama-main svg {
-    pointer-events: visiblePainted;
-}
+@import url("./main.css");
+@import url("./animation.css");
+@import url("./title.css");
