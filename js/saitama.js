@@ -56,14 +56,11 @@ $(function(){
   );
 
   //ホバーエミュレート
-  var touches = Array();
   $(".hover")
     .on("touchstart", function(){
-      touches.push(this);
       $(this).addClass('_hover');
     })
     .on("touchend", function(event){
-      touche
       for (i=0; i<event.touches.length; i++) {
         touch = event.touches[i];
         if (touch.target === this && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
