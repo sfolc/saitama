@@ -59,7 +59,7 @@ $(function(){
   $(".hover")
     .on("touchstart", function(){
        $(this).addClass('_hover');
-    }).on("touchend mouseleave", function(){
+    }).on("touchend touchleave", function(){
       alert("leave");
        $(this).removeClass("_hover");
   });
