@@ -59,9 +59,14 @@ $(function(){
   $(".hover")
     .on("touchstart", function(){
        $(this).addClass('_hover');
-    }).on("touchend touchleave", function(){
+    }).on("touchend", function(){
       alert("leave");
        $(this).removeClass("_hover");
+    }).on("mouseleave", function(){
+      alert("leave");
+      $(this).removeClass("_hover");
+    }).on("mouseenter", function(){
+      alert("enter");
   });
 
 });
