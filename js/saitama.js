@@ -57,10 +57,10 @@ $(function(){
 
   //ホバーエミュレート
   $(".hover")
-    .on('touchstart', function(){
+    .on("touchstart", function(){
        $(this).addClass('_hover');
-    }).on('touchend', function(){
-       $(this).removeClass('_hover');
+    }).on("touchend mouseleave", function(){
+       $(this).removeClass("_hover");
   });
 
 });
