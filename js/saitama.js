@@ -57,33 +57,28 @@ $(function(){
 
   //ホバーエミュレート
   $("html").on("touchstart", function(event){return false});
-
+  var leaves = {};
   $(".hover")
     .on("touchstart", function(event){
+      for (i=0; i<event.changedTouches.length; i++) {
+        touch = event.changedTouches[i];
+        leaves[touch.identifier] = false;
+      }
       $(this).addClass('_hover');
       return false;
     })
-    .on("touchend", function(event){
-      for (i=0; i<event.touches.length; i++) {
-        touch = event.touches[i];
-        if (!touch.leave && touch.target === this && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
-          return false;
+    .on("touchend touchcancel touchmove", function(event){
+      leaveall = true;
+      for (i=0; i<event.targetTouches.length; i++) {
+        touch = event.targetTouches[i];
+        if (document.elementFromPoint(touch.pageX, touch.pageY) === this) {
+          leaveall = false;
+        } else {
+          leaves[touch.identifier] = true;
         }
       }
-      $(this).removeClass("_hover");
-      return false;
-    })
-    .on("touchmove", function(event){
-      for (i=0; i<event.touches.length; i++) {
-        touch = event.touches[i];
-        if (!touch.leave && touch.target === this && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
-          return false;
-        }
-        if (!touch.leave && touch.target !==  document.elementFromPoint(touch.pageX, touch.pageY)) {
-          touch.leave = true;
-        }
-      }
-      $(this).removeClass("_hover");
+      if (leaveall)
+        $(this).removeClass("_hover");
       return false;
     });
 
