@@ -60,13 +60,7 @@ $(function(){
 
   $(".hover")
     .on("touchstart", function(event){
-      for (i=0; i<event.touches.length; i++) {
-        touch = event.touches[i];
-        if (touch.target === this && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
-          $(this).addClass('_hover');
-          return false;
-        }
-      }
+      $(this).addClass('_hover');
       return false;
     })
     .on("touchend", function(event){
