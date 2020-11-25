@@ -56,7 +56,7 @@ $(function(){
   );
 
   //ホバーエミュレート
-  $("html").on("touchstart", function(event){});
+  $("html").on("touchstart", function(event){return false});
 
   $(".hover")
     .on("touchstart", function(event){
@@ -66,7 +66,7 @@ $(function(){
     .on("touchend", function(event){
       for (i=0; i<event.touches.length; i++) {
         touch = event.touches[i];
-        if (touch.target === this && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
+        if (!touch.leave && touch.target === this && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
           return false;
         }
       }
@@ -76,8 +76,11 @@ $(function(){
     .on("touchmove", function(event){
       for (i=0; i<event.touches.length; i++) {
         touch = event.touches[i];
-        if (touch.target === this && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
+        if (!touch.leave && touch.target === this && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
           return false;
+        }
+        if (!touch.leave && touch.target !==  document.elementFromPoint(touch.pageX, touch.pageY)) {
+          touch.leave = true;
         }
       }
       $(this).removeClass("_hover");
