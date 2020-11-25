@@ -41,18 +41,20 @@ $(function(){
   
   fillDiv(saitama_main, true);
   if ("onorientationchange" in window) {
-    $(window).on("orientationchange", function() { setTimeout(function() { fillDiv(saitama_main, true); }, 500) });
+    $(window).on("orientationchange", () => { setTimeout(() => { fillDiv(saitama_main, true); }, 500); });
   } else if ("ondeviceorientation" in window) {
-    $(window).on("deviceorientation", function() { setTimeout(function() { fillDiv(saitama_main, true); }, 500) });
+    $(window).on("deviceorientation", () => { setTimeout(() => { fillDiv(saitama_main, true); }, 500); });
   }
-  $(window).on("resize", function() { fillDiv(saitama_main, true); });;
+  $(window).on("resize", () => { fillDiv(saitama_main, true); });;
   
-  $(document).on("touchstart touchend", function() {return false;});
+  //タップズーム抑制
+  $(document).on("touchstart touchend", (e) => { if (e.cancalable) return false; });
+
   //右クリック（ロングタップ）メニュー抑制
-  saitama_main.on("contextmenu", function() {return false;});
+  saitama_main.on("contextmenu", () => false);
 
   //ホバーエミュレート
-  $("html").on("touchstart", function() {return false;});
+  $("html").on("touchstart", () => false);
 
   var leaves = {};
   $(".hover")
