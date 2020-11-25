@@ -49,16 +49,17 @@ $(function(){
   */
  
   //右クリック（ロングタップ）メニュー抑制
-  saitama_main.on("contextmenu",
-    function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      return false;
-    }
-  );
+  saitama_main.on("contextmenu", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+  });
 
   //ホバーエミュレート
-  $("html").on("touchstart", function(event){return false});
+  $("html").on("touchstart", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+  });
+
   var leaves = {};
   $(".hover")
     .on("touchstart", function(event){
@@ -82,6 +83,7 @@ $(function(){
       }
       if (leaveall)
         $(this).removeClass("_hover");
+      return false;
     });
 
 });
