@@ -45,7 +45,7 @@ $(function(){
   } else if ("ondeviceorientation" in window) {
     $(window).on("deviceorientation", () => { setTimeout(() => { fillDiv(saitama_main, true); }, 500); });
   }
-  $(window).on("resize", () => { fillDiv(saitama_main, true); });;
+  $(window).on("resize", () => { $("#console").text(window.innerWidth);fillDiv(saitama_main, true); });;
   
   //タップズーム抑制
   $(document).on("touchstart touchmove touchend gesturestart gesturechage gestureend", (e) => { if (e.cancalable) return false; });
