@@ -5,7 +5,7 @@
     padding: 0;
     user-select: none;
     -webkit-user-select: none;
-    touch-action: manipulation;
+    touch-action: none;
 }
 
 html {
