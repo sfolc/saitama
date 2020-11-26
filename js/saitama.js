@@ -3,8 +3,8 @@ function fillDiv(div, proportional) {
   var currentWidth = div.outerWidth();
   var currentHeight = div.outerHeight();
 
-  var availableHeight = window.innerHeight;
-  var availableWidth = window.innerWidth;
+  var availableHeight = $(window).Height();
+  var availableWidth = $(window).Width();
 
   var scaleX = availableWidth / currentWidth;
   var scaleY = availableHeight / currentHeight;
@@ -16,15 +16,11 @@ function fillDiv(div, proportional) {
 
   var translationX = Math.round((availableWidth - (currentWidth * scaleX)) / 2);
   var translationY = Math.round((availableHeight - (currentHeight * scaleY)) / 2);
-
+  $("#console").text(availableWidth);
   div.css({
     "position": "fixed",
     "left": "0px",
     "top": "0px",
-    "-webkit-transform": "translate(" + translationX + "px, "
-                                      + translationY + "px) scale3d("
-                                      + scaleX + ", " + scaleY + ", 1)",
-    "-webkit-transform-origin": "0 0",
     "transform": "translate(" + translationX + "px, "
                                       + translationY + "px) scale3d("
                                       + scaleX + ", " + scaleY + ", 1)",
@@ -42,10 +38,12 @@ $(function(){
   fillDiv(saitama_main, true);
   if ("onorientationchange" in window) {
     $(window).on("orientationchange", () => { setTimeout(() => { fillDiv(saitama_main, true); }, 500); });
+    console.log("x");
   } else if ("ondeviceorientation" in window) {
     $(window).on("deviceorientation", () => { setTimeout(() => { fillDiv(saitama_main, true); }, 500); });
+    console.log("y");
   }
-  $(window).on("resize", () => { $("#console").text(window.innerWidth);fillDiv(saitama_main, true); });;
+  $(window).on("resize", () => { fillDiv(saitama_main, true); });;
   
   //タップズーム抑制
   $(document).on("touchstart touchmove touchend gesturestart gesturechage gestureend", (e) => { if (e.cancalable) return false; });
