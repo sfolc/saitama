@@ -5,13 +5,23 @@
 #saitama-title-title {
     top: 10px;
     left: 50px;
+    display: table;
+    color: coral;
+    font-size: 40px;
+    font-weight: 900;
+    white-space: nowrap;
 }
 
-#saitama-title-title h1 {
-    color: coral;
-    font-size: 2.4rem;
-    padding-left: 4em;
-    text-indent: -4em;
+#saitama-title-title > div {
+   display: table-row;
+}
+
+#saitama-title-title > div > span{
+   display: table-cell
+}
+
+#saitama-title-title-2 {
+    position: absolute;
 }
 
 #saitama-title-saitama {
@@ -22,7 +32,6 @@
 }
 
 #saitama-title-saitama svg {
-    position: absolute;
     width: 100%;
     height: 100%;
 }
