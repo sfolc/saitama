@@ -16,7 +16,6 @@ function fillDiv(div, proportional) {
 
   var translationX = Math.round((availableWidth - (currentWidth * scaleX)) / 2);
   var translationY = Math.round((availableHeight - (currentHeight * scaleY)) / 2);
-  $("#console").text(availableWidth);
   div.css({
     "position": "fixed",
     "left": "0px",
@@ -34,26 +33,21 @@ $(function(){
   var saitama_main = $("#saitama-main");
 
   //自動リサイズ
-  
   fillDiv(saitama_main, true);
   if ("onorientationchange" in window) {
     $(window).on("orientationchange", () => { setTimeout(() => { fillDiv(saitama_main, true); }, 500); });
-    console.log("x");
   } else if ("ondeviceorientation" in window) {
     $(window).on("deviceorientation", () => { setTimeout(() => { fillDiv(saitama_main, true); }, 500); });
-    console.log("y");
   }
   $(window).on("resize", () => { fillDiv(saitama_main, true); });;
   
-  //タップズーム抑制
-  $(document, window).on("touchstart touchmove touchend gesturestart gesturechage gestureend", (e) => { if (e.cancalable) return false; });
+  //ズーム抑制
+  saitama_main.on("touchstart touchmove touchend gesturestart gesturechage gestureend", () => false);
 
   //右クリック（ロングタップ）メニュー抑制
   saitama_main.on("contextmenu", () => false);
 
   //ホバーエミュレート
-  $("html").on("touchstart", () => false);
-
   var leaves = {};
   $(".hover")
     .on("touchstart", function(event){
