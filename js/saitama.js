@@ -3,8 +3,8 @@ function fillDiv(div, proportional) {
   var currentWidth = div.outerWidth();
   var currentHeight = div.outerHeight();
 
-  var availableHeight = $(window).Height();
-  var availableWidth = $(window).Width();
+  var availableHeight = $(window).height();
+  var availableWidth = $(window).width();
 
   var scaleX = availableWidth / currentWidth;
   var scaleY = availableHeight / currentHeight;
