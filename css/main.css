@@ -13,6 +13,7 @@ html {
     font-family: "M PLUS Rounded 1c";
     font-weight: 900;
     height: 100%;
+    overscroll-behavior: none;
 }
 
 body {
