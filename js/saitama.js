@@ -48,7 +48,7 @@ $(function(){
   $(window).on("resize", () => { fillDiv(saitama_main, true); });;
   
   //タップズーム抑制
-  $(document).on("touchstart touchend", (e) => { if (e.cancalable) return false; });
+  $(document).on("touchstart touchmove touchend gesturestart gesturechage gestureend", (e) => { if (e.cancalable) return false; });
 
   //右クリック（ロングタップ）メニュー抑制
   saitama_main.on("contextmenu", () => false);
