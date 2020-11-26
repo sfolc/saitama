@@ -86,13 +86,6 @@ $(() => {
     localStorage.soundvolume2 = $("#saitama-optinos-soundvolume2").val();
     $("#saitama-options").hide(500);
   })
-  
-  $("#saitama-options-cancel").on("click", () => {
-    $("#saitama-optinos-soundvolume").val(getDef(localStorage, "soundvolume", 50));
-    $("#saitama-optinos-textspeed").val(getDef(localStorage, "textspeed", 50));
-    $("#saitama-optinos-soundvolume2").val(getDef(localStorage, "soundvolume2", 50));
-    $("#saitama-options").hide(500);
-  })
 
 });
 
