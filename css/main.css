@@ -12,12 +12,10 @@ html {
     font-family: "M PLUS Rounded 1c";
     font-weight: 900;
     height: 100%;
-    overscroll-behavior: none;
 }
 
 body {
     height: 100%;
-    overscroll-behavior: none;
 }
 
 #whole-wrapper {
@@ -26,14 +24,18 @@ body {
     height: 100%;
 }
 
+#whole-wrapper * {
+    touch-action: none;
+}
+
 #saitama-main {
     position: relative;
     height: 360px;
     width: 640px;
     background-color: white;
     overflow: hidden;
-    touch-action: none;
 }
+
 
 #saitama-main svg {
     pointer-events: visiblePainted;
