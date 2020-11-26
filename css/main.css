@@ -5,7 +5,6 @@
     padding: 0;
     user-select: none;
     -webkit-user-select: none;
-    touch-action: none;
 }
 
 html {
@@ -33,6 +32,7 @@ body {
     width: 640px;
     background-color: white;
     overflow: hidden;
+    touch-action: none;
 }
 
 #saitama-main svg {
