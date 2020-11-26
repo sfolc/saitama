@@ -1,3 +1,7 @@
+function getDef(obj, key, def=null) {
+  return key in obj ? obj.getItem(key) : def;
+}
+
 //リサイズ
 function fillDiv(div, proportional) {
   var currentWidth = div.outerWidth();
@@ -28,7 +32,7 @@ function fillDiv(div, proportional) {
 }
 
 //初期化
-$(function(){
+$(() => {
 
   var saitama_main = $("#saitama-main");
 
@@ -40,9 +44,6 @@ $(function(){
     $(window).on("deviceorientation", () => { setTimeout(() => { fillDiv(saitama_main, true); }, 500); });
   }
   $(window).on("resize", () => { fillDiv(saitama_main, true); });;
-  
-  //ズーム抑制
-  saitama_main.on("touchstart touchmove touchend gesturestart gesturechage gestureend", () => false);
 
   //右クリック（ロングタップ）メニュー抑制
   saitama_main.on("contextmenu", () => false);
@@ -70,9 +71,26 @@ $(function(){
         $(this).removeClass("_hover");
     });
 
+    
+  $("#saitama-title-menu-options").on("click", () => {
+    $("#saitama-options").show(500);
+  })
+
+  $("#saitama-optinos-soundvolume").val(getDef(localStorage, "soundvolume", 50));
+  $("#saitama-optinos-textspeed").val(getDef(localStorage, "textspeed", 50));
+  $("#saitama-optinos-soundvolume2").val(getDef(localStorage, "soundvolume2", 50));
+
+  $("#saitama-options-hide").on("click", () => {
+    localStorage.soundvolume = $("#saitama-optinos-soundvolume").val();
+    localStorage.textspeed = $("#saitama-optinos-textspeed").val();
+    localStorage.soundvolume2 = $("#saitama-optinos-soundvolume2").val();
+    $("#saitama-options").hide(500);
+  })
+
 });
 
 //リソースロード終了
 $(window).on("load", function(){
 
 });
+

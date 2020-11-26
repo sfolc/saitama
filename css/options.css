@@ -1,0 +1,73 @@
+#saitama-options {
+    display: none;
+    background-color: rgba(0,255,255,0.5);
+    z-index: 200;
+    padding: 20px 100px;
+}
+
+#saitama-options-inner {
+    padding: 20px;
+    border: 4px groove gray;
+    background-color: aqua;
+}
+
+#saitama-options-title {
+    font-size: 20px;
+}
+
+#saitama-options-options {
+    margin: 20px;
+}
+
+#saitama-options-options > div{
+    margin-bottom: 20px;
+}
+
+#saitama-options-options input[type=range]{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    background: azure; 
+    border-radius: 5px;
+    outline: none;
+}
+
+#saitama-options-options input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: gray;
+    cursor: pointer;
+}
+
+#saitama-options-options input[type=range]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: gray;
+    cursor: pointer;
+}
+
+#saitama-options-hide {
+    text-align: right;
+}
+
+#saitama-options-hide div {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 10%;
+    background-color: white;
+}
+
+@media (pointer: fine) {
+    #saitama-options-hide div:hover {
+        background-color: gray;
+    }
+}
+
+#saitama-options-hide div._hover {
+    background-color: gray;
+}

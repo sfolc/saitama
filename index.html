@@ -18,9 +18,9 @@
           </div>
           <div id="saitama-title-menu">
             <ul>
-              <li class="hover">はじめから</li>
-              <li class="hover">つつきから</li>
-              <li class="hover">オプション</li>
+              <li id="saitama-title-menu-start" class="hover">はじめから</li>
+              <li id="saitama-title-menu-continue" class="hover">つつきから</li>
+              <li id="saitama-title-menu-options" class="hover">オプション</li>
             </ul>
           </div>
           <div id="saitama-title-saitama">
@@ -29,6 +29,17 @@
               <use xlink:href="img/concentrate.svg#concentrate" />
               <use class="animation-shake" xlink:href="img/gogogo.svg#gogogo" />
             </svg>
+          </div>
+        </div>
+        <div id="saitama-options">
+          <div id="saitama-options-inner">
+            <div id="saitama-options-title">オプション</div>
+            <div id="saitama-options-options">
+              <div><span>サウンド音量</span><input id="saitama-optinos-soundvolume" type="range" min="0" max="100" value="50" class="slider"></div>
+              <div><span>オートモード文字送り速度</span><input id="saitama-optinos-textspeed" type="range" min="0" max="100" value="50" class="slider"></div>
+              <div><span>サウンド音量</span><input id="saitama-optinos-soundvolume2" type="range" min="0" max="100" value="50" class="slider"></div>
+            </div>
+            <div id="saitama-options-hide"><div class="hover">閉じる</div></div>
           </div>
         </div>
       </div>
