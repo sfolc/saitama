@@ -72,13 +72,13 @@ $(() => {
     });
 
     
-  $("#saitama-title-menu-options").on("click", () => {
-    $("#saitama-options").show(500);
-  })
-
   $("#saitama-optinos-soundvolume").val(getDef(localStorage, "soundvolume", 50));
   $("#saitama-optinos-textspeed").val(getDef(localStorage, "textspeed", 50));
   $("#saitama-optinos-soundvolume2").val(getDef(localStorage, "soundvolume2", 50));
+
+  $("#saitama-title-menu-options").on("click", () => {
+    $("#saitama-options").show(500);
+  })
 
   $("#saitama-options-hide").on("click", () => {
     localStorage.soundvolume = $("#saitama-optinos-soundvolume").val();
