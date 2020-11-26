@@ -51,23 +51,24 @@
     cursor: pointer;
 }
 
-#saitama-options-hide {
+#saitama-options-button {
     text-align: right;
 }
 
-#saitama-options-hide div {
+#saitama-options-button div {
     display: inline-block;
     border: 1px solid black;
     border-radius: 10%;
     background-color: white;
+    padding: 0 6px;
 }
 
 @media (pointer: fine) {
-    #saitama-options-hide div:hover {
+    #saitama-options-button div:hover {
         background-color: gray;
     }
 }
 
-#saitama-options-hide div._hover {
+#saitama-options-button div._hover {
     background-color: gray;
 }
