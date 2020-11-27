@@ -63,20 +63,20 @@ $(() => {
       for (i=0; i<event.changedTouches.length; i++) {
         leaves[event.changedTouches[i].identifier] = false;
       }
-      $(this).addClass('_hover');
+      $(event.target).addClass('_hover');
     })
     .on("touchend touchcancel touchmove", (event) => {
       var leaveall = true;
       for (i=0; i<event.targetTouches.length; i++) {
         let touch = event.targetTouches[i];
-        if (!leaves[touch.identifier] && document.elementFromPoint(touch.pageX, touch.pageY) === this) {
+        if (!leaves[touch.identifier] && document.elementFromPoint(touch.pageX, touch.pageY) === event.target) {
           leaveall = false;
         } else {
           leaves[touch.identifier] = true;
         }
       }
       if (leaveall)
-        $(this).removeClass("_hover");
+        $(event.target).removeClass("_hover");
     });
 
   
@@ -109,7 +109,7 @@ $(() => {
 });
 
 //リソースロード終了
-$(window).on("load", (event) => {
+$(window).on("load", () => {
   if (document.styleSheets[0].cssRules.length > 0) {
     $("#saitama-title").show(0, ()=>{
       setTimeout(()=>{
