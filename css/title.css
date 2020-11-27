@@ -12,7 +12,7 @@
     top: 10px;
     left: 50px;
     display: table;
-    color: coral;
+    color:  tomato;
     font-size: 40px;
     font-weight: 900;
     white-space: nowrap;
@@ -26,9 +26,6 @@
    display: table-cell
 }
 
-#saitama-title-title-2 {
-    position: absolute;
-}
 
 #saitama-title-saitama {
     right: 0px;
