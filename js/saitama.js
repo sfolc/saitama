@@ -87,7 +87,9 @@ $(() => {
 
   //つづきから
   $("#saitama-title-menu-continue").on("click", () => {
-  })
+    clickprotector.show();
+    $("#saitama-loaddata").show(500, ()=>{clickprotector.hide()});
+})
 
   //オプション
   $("#saitama-title-menu-options").on("click", () => {

@@ -1,0 +1,74 @@
+#saitama-loaddata {
+    display: none;
+    background-color: rgba(0,255,255,0.5);
+    z-index: 500;
+    padding: 20px 100px;
+}
+
+#saitama-loaddata-inner {
+    padding: 20px;
+    border: 4px groove gray;
+    background-color: rgb(22, 35, 214);
+}
+
+#saitama-loaddata-title {
+    font-size: 20px;
+}
+
+#saitama-loaddata-loaddata {
+    margin: 20px;
+}
+
+#saitama-loaddata-loaddata > div{
+    margin-bottom: 20px;
+}
+
+#saitama-loaddata-loaddata input[type=range]{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    background: azure; 
+    border-radius: 5px;
+    outline: none;
+}
+
+#saitama-loaddata-loaddata input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: gray;
+    cursor: pointer;
+}
+
+#saitama-loaddata-loaddata input[type=range]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: gray;
+    cursor: pointer;
+}
+
+#saitama-loaddata-button {
+    text-align: right;
+}
+
+#saitama-loaddata-button div {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 10%;
+    background-color: white;
+    padding: 0 6px;
+}
+
+@media (pointer: fine) {
+    #saitama-loaddata-button div:hover {
+        background-color: gray;
+    }
+}
+
+#saitama-loaddata-button div._hover {
+    background-color: gray;
+}
