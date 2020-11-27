@@ -7,7 +7,6 @@ function validRangeInt(val, vmin, vmax, def=null) {
     return val;
 }
 
-
 //リサイズ
 function fillDiv(div, proportional) {
   var currentWidth = div.outerWidth();
@@ -58,13 +57,13 @@ $(() => {
   //ホバーエミュレート
   var leaves = {};
   $(".hover")
-    .on("touchstart", function(event){
+    .on("touchstart", (event) => {
       for (i=0; i<event.changedTouches.length; i++) {
         leaves[event.changedTouches[i].identifier] = false;
       }
       $(this).addClass('_hover');
     })
-    .on("touchend touchcancel touchmove", function(event){
+    .on("touchend touchcancel touchmove", (event) => {
       var leaveall = true;
       for (i=0; i<event.targetTouches.length; i++) {
         let touch = event.targetTouches[i];
@@ -99,7 +98,10 @@ $(() => {
 });
 
 //リソースロード終了
-$(window).on("load", function(){
-  $("#saitama-clickprotector").hide();
+$(window).on("load", () => {
+  $("#saitama-title").show(()=>{
+    $("#saitama-loading").hide();
+    $("#saitama-clickprotector").hide();
+  });
 });
 

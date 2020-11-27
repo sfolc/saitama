@@ -1,4 +1,5 @@
 #saitama-title {
+    display: none;
     background-color: white;
     z-index: 100;
 }
