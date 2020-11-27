@@ -1,6 +1,12 @@
-function getDef(obj, key, def=null) {
-  return key in obj ? obj.getItem(key) : def;
+function validRangeInt(val, vmin, vmax, def=null) {
+    val = parseInt(val);
+    if (def === null) def = vmin;
+    if (isNaN(val)) return def;
+    if (val < vmin) return vmin;
+    if (val > vmax) return vmax;
+    return val;
 }
+
 
 //リサイズ
 function fillDiv(div, proportional) {
@@ -35,6 +41,7 @@ function fillDiv(div, proportional) {
 $(() => {
 
   var saitama_main = $("#saitama-main");
+  var clickprotector = $("#saitama-clickprotector");
 
   //自動リサイズ
   fillDiv(saitama_main, true);
@@ -72,25 +79,27 @@ $(() => {
     });
 
     
-  $("#saitama-optinos-soundvolume").val(getDef(localStorage, "soundvolume", 50));
-  $("#saitama-optinos-textspeed").val(getDef(localStorage, "textspeed", 50));
-  $("#saitama-optinos-soundvolume2").val(getDef(localStorage, "soundvolume2", 50));
+  $("#saitama-optinos-soundvolume").val(validRangeInt(localStorage.soundvolume, 0, 100, 50));
+  $("#saitama-optinos-textspeed").val(validRangeInt(localStorage.textspeed, 0, 100, 50));
+  $("#saitama-optinos-soundvolume2").val(validRangeInt(localStorage.soundvolum2e, 0, 100, 50));
 
   $("#saitama-title-menu-options").on("click", () => {
-    $("#saitama-options").show(500);
+    clickprotector.show();
+    $("#saitama-options").show(500, ()=>{clickprotector.hide()});
   })
 
   $("#saitama-options-ok").on("click", () => {
-    localStorage.soundvolume = $("#saitama-optinos-soundvolume").val();
-    localStorage.textspeed = $("#saitama-optinos-textspeed").val();
-    localStorage.soundvolume2 = $("#saitama-optinos-soundvolume2").val();
-    $("#saitama-options").hide(500);
+    clickprotector.show();
+    localStorage.soundvolume = validRangeInt($("#saitama-optinos-soundvolume").val(), 0, 100, 50);
+    localStorage.textspeed = validRangeInt($("#saitama-optinos-textspeed").val(), 0, 100, 50);
+    localStorage.soundvolume2 = validRangeInt($("#saitama-optinos-soundvolume2").val(), 0, 100, 50);
+    $("#saitama-options").hide(500, ()=>{clickprotector.hide()});
   })
 
 });
 
 //リソースロード終了
 $(window).on("load", function(){
-
+  $("#saitama-clickprotector").hide();
 });
 
