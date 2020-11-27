@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=640">
     <title>お前はもう、さいたま県</title>
     <link rel="stylesheet" href="css/saitama.css">
-    <link rel="preload" href="fonts/m-plus-rounded-1c-v10-latin_japanese-500.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/m-plus-rounded-1c-v10-latin_japanese-700.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/m-plus-rounded-1c-v10-latin_japanese-800.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/m-plus-rounded-1c-v10-latin_japanese-900.woff2" as="font" type="font/woff2" crossorigin>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/saitama.js"></script>
@@ -33,6 +31,21 @@
               <use xlink:href="img/title.svg#concentrate" />
               <use xlink:href="img/title.svg#gogogo" class="animation-shake" />
             </svg>
+          </div>
+        </div>
+        <div id="saitama-loaddata" style="display: none;">
+          <div id="saitama-loaddata-inner">
+            <div id="saitama-loaddata-title">ロード</div>
+            <div id="saitama-loaddata-select">
+              <div><span>Data 1</span><span>No Data</span><span>00/00/00 00:00:00</span></div>
+              <div><span>Data 2</span><span>No Data</span><span>00/00/00 00:00:00</span></div>
+              <div><span>Data 3</span><span>No Data</span><span>00/00/00 00:00:00</span></div>
+              <div><span>Data 4</span><span>No Data</span><span>00/00/00 00:00:00</span></div>
+              <div><span>Data 5</span><span>No Data</span><span>00/00/00 00:00:00</span></div>
+            </div>
+            <div id="saitama-options-button">
+              <div id="saitama-options-cancel" class="hover">戻る</div>
+            </div>
           </div>
         </div>
         <div id="saitama-options" style="display: none;">
