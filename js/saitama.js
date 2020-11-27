@@ -1,3 +1,5 @@
+
+//範囲バリデーション
 function validRangeInt(val, vmin, vmax, def=null) {
     val = parseInt(val);
     if (def === null) def = vmin;
@@ -77,16 +79,26 @@ $(() => {
         $(this).removeClass("_hover");
     });
 
-    
-  $("#saitama-optinos-soundvolume").val(validRangeInt(localStorage.soundvolume, 0, 100, 50));
-  $("#saitama-optinos-textspeed").val(validRangeInt(localStorage.textspeed, 0, 100, 50));
-  $("#saitama-optinos-soundvolume2").val(validRangeInt(localStorage.soundvolum2e, 0, 100, 50));
+  
+  //タイトルメニュー動作定義
+  //はじめから
+  $("#saitama-title-menu-start").on("click", () => {
+  })
 
+  //つづきから
+  $("#saitama-title-menu-continue").on("click", () => {
+  })
+
+  //オプション
   $("#saitama-title-menu-options").on("click", () => {
     clickprotector.show();
+    $("#saitama-optinos-soundvolume").val(validRangeInt(localStorage.soundvolume, 0, 100, 50));
+    $("#saitama-optinos-textspeed").val(validRangeInt(localStorage.textspeed, 0, 100, 50));
+    $("#saitama-optinos-soundvolume2").val(validRangeInt(localStorage.soundvolume2, 0, 100, 50));
     $("#saitama-options").show(500, ()=>{clickprotector.hide()});
   })
 
+  //オプションウィンドウ動作定義
   $("#saitama-options-ok").on("click", () => {
     clickprotector.show();
     localStorage.soundvolume = validRangeInt($("#saitama-optinos-soundvolume").val(), 0, 100, 50);
@@ -94,14 +106,16 @@ $(() => {
     localStorage.soundvolume2 = validRangeInt($("#saitama-optinos-soundvolume2").val(), 0, 100, 50);
     $("#saitama-options").hide(500, ()=>{clickprotector.hide()});
   })
-
 });
 
 //リソースロード終了
-$(window).on("load", () => {
-  $("#saitama-title").show(()=>{
-    $("#saitama-loading").hide();
-    $("#saitama-clickprotector").hide();
-  });
+$(window).on("load", (event) => {
+  if (document.styleSheets[0].cssRules.length > 0) {
+    $("#saitama-title").show(0, ()=>{
+      setTimeout(()=>{
+        $("#saitama-loading").hide();
+        $("#saitama-clickprotector").hide();
+      }, 500);
+    });
+  }
 });
-
