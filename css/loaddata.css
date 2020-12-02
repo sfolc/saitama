@@ -1,6 +1,6 @@
 #saitama-loaddata {
     display: none;
-    background-color: rgba(0,255,255,0.5);
+    background-color: rgba(0,255,255,0.4);
     z-index: 500;
     padding: 20px 100px;
 }
@@ -8,7 +8,7 @@
 #saitama-loaddata-inner {
     padding: 20px;
     border: 4px groove gray;
-    background-color: rgb(22, 35, 214);
+    background-color: rgb(58, 69, 218,0.5);
 }
 
 #saitama-loaddata-title {
